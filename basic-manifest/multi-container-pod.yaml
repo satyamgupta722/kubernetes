@@ -1,0 +1,15 @@
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: multiplecontainerpod
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo First container; sleep 5 ; done"]
+
+    - name: c01
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Second container; sleep 5 ; done"]
+  restartPolicy: Never
