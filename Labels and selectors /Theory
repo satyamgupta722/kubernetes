@@ -1,0 +1,16 @@
+To apply labels to existing pods -
+
+- Kubectl label pods <podname> env=dev (labels key=value)
+- Kubectl get pods --show-labels
+- kubectl get pods -l env=dev (To list pods with matching labels) , kubectl get pods -l env!=dev (selector to show env is not dev pods)
+- kubectl get pods -l 'env in (test,dev)' (Setbased selectors) (in, notin, exists) ---- set based
+
+
+Node Selector - 
+
+Schedule a pod to run on a particular node. We tell pod to run on a particular nodes. 
+- equality based and set based selector 
+Ex- nodeSelector:
+         hardware: t2-medium
+
+two types of selector- equlity based ( = !=) and set based ( exists in notin )
